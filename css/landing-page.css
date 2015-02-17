@@ -48,7 +48,7 @@ h6 {
 }
 
 .intro-divider {
-    width: 400px;
+    width: 666px;
     border-top: 1px solid #f8f8f8;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
@@ -85,11 +85,11 @@ p.copyright {
 }
 
 .footer-mail {
-    color: #ffffff;
+    color: #00adcc;
 }
 
 .footer-mail:hover {
-    color: #00adcc;
+    color: #ffffff;
 }
 .img-main-center{
     display: inline;
