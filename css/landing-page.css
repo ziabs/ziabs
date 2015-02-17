@@ -91,3 +91,6 @@ p.copyright {
 .footer-mail:hover {
     color: #00adcc;
 }
+.img-main-center{
+    display: inline;
+}
