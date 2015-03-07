@@ -87,11 +87,44 @@ p.copyright {
 
 .footer-mail {
     color: #00adcc;
+    position: relative;
 }
 
 .footer-mail:hover {
     color: #ffffff;
+    text-decoration: none;
 }
-.img-main-center{
+
+.footer-mail:after {
+    display: block;
+    position: absolute;
+    left: 0px;
+    width: 0;
+    height: 5px;
+    background-color: #00adcc;
+    content: "";
+    transition: width 0.7s;
+}
+
+.footer-mail:hover:after {
+    width: 100%;
+}
+
+.img-main-center {
     display: inline;
+    animation: pulse 1s ease infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
