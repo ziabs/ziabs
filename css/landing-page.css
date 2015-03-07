@@ -75,7 +75,6 @@ h6 {
 p.copyright {
     margin: 15px 0 0;
 }
-
 /********** ziAbs css **********/
 .navbar-brand {
     padding: 9px 9px;
@@ -112,7 +111,82 @@ p.copyright {
 
 .img-main-center {
     display: inline;
+    -webkit-animation: pulse 1s ease infinite;
+    -moz-animation: pulse 1s ease infinite;
+    -ms-animation: pulse 1s ease infinite;
+    -o-animation: pulse 1s ease infinite;
     animation: pulse 1s ease infinite;
+}
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-transform: scale(1);
+    }
+
+    25% {
+        -webkit-transform: scale(1.1);
+    }
+
+    50% {
+        -webkit-transform: scale(1);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+    }
+}
+
+@-moz-keyframes pulse {
+    0% {
+        -moz-transform: scale(1);
+    }
+
+    25% {
+        -moz-transform: scale(1.1);
+    }
+
+    50% {
+        -moz-transform: scale(1);
+    }
+
+    100% {
+        -moz-transform: scale(1);
+    }
+}
+
+@-ms-keyframes pulse {
+    0% {
+        -ms-transform: scale(1);
+    }
+
+    25% {
+        -ms-transform: scale(1.1);
+    }
+
+    50% {
+        -ms-transform: scale(1);
+    }
+
+    100% {
+        -ms-transform: scale(1);
+    }
+}
+
+@-o-keyframes pulse {
+    0% {
+        -o-transform: scale(1);
+    }
+
+    25% {
+        -o-transform: scale(1.1);
+    }
+
+    50% {
+        -o-transform: scale(1);
+    }
+
+    100% {
+        -o-transform: scale(1);
+    }
 }
 
 @keyframes pulse {
