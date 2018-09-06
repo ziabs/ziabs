@@ -1,0 +1,14 @@
+<h2 class="ziabs-heading">How to pass a variable by value to async callbacks in Javascript (Nodejs)</h2>
+<span class="col-md-6 entry-img"><img  class="img-responsive ziabs-center-img" src="http://ziabs.com/notes/images/notes/how-to-pass-a-variable-by-value-to-async-callbacks-in-javascript.png"></span>
+<div class="entry-desc col-md-6">
+    <p>If you are a javascript developer, one of the hurdles you would have faced is how to pass a variable by value to async callbacks in Javascript when the variable is changing inside a loop. When a variable is declared as var , it gets hoisted to the top of the scope and the same variable gets shared inside the callback function as well. This becomes a problem because if the variable is getting incremented or changed in some way.</p>
+	<h4>Wrong code</h4>
+	<figure class="highlight"><pre><code class="language-css"><div>for (var i = 0; i < 3; i++){</div><div>setInterval(function() {</div><div>console.log(i)</div><div>}, 500)</div><div>}</div></code></pre></figure>
+	<P>The output of the above code is 3, 3, 3 which is not what you would expect. When I first faced this problem, I was expecting it to print 0, 1, 2 but instead, I got the final value of the variable printed out. After a lot of digging around, I managed to find a solution which is binding variable to the function’s scope. This way the variable is passed as value instead of referring to the parent variable.</P>
+</div>
+<div class="entry-desc col-md-12 ziabs-desc">
+	<h4>THE SOLUTION?</h4>
+	<p>There are multiple ways to fix this issue- one is declaring the variable as <code>let</code> instead of <code>var</code> like so,</p>
+		<figure class="highlight"><pre><code class="language-css"><div>for (var i = 0; i < 3; i++) {</div><div>setTimeout(function() {</div><div> console.log(this.i)</div><div>}.bind({ i: i}), 500)</div><div>}</div></code></pre></figure>
+	<p>Now the output is <code>0, 1, 2</code> which is exactly what we wanted. In the above example, we are binding the global var to function scope using the bind keyword.</p>
+</div>

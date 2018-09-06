@@ -55,34 +55,14 @@
 			<div class="row row-pb-md">
 				<div class="col-md-12">
 					<ul id="gtco-post-list">
-						<li class="full entry animate-box" data-animate-effect="fadeIn"> 
-								<div class="entry-img" style="background-image: url(images/notes/how-to-pass-a-variable-by-value-to-async-callbacks-in-javascript.png"></div>
-								<div class="entry-desc">
-									<h3>How to pass a variable by value to async callbacks in Javascript (Nodejs)</h3>
-									<p>
-										If you are a javascript developer, one of the hurdles you would have faced is how to pass a variable by value to async callbacks in Javascript when the variable is changing inside a loop. When a variable is declared as var , it gets hoisted to the top of the scope and the same variable gets shared inside the callback function as well. This becomes a problem because if the variable is getting incremented or changed in some way.
-									</p>
-									<h4>Wrong code</h4>
-									<figure class="highlight"><pre><code class="language-css"><div>for (var i = 0; i < 3; i++){</div><div>setInterval(function() {</div><div>console.log(i)</div><div>}, 500)</div><div>}</div>
-									</code></pre></figure>
-									<P>The output of the above code is 3, 3, 3 which is not what you would expect. When I first faced this problem, I was expecting it to print 0, 1, 2 but instead, I got the final value of the variable printed out. After a lot of digging around, I managed to find a solution which is binding variable to the function’s scope. This way the variable is passed as value instead of referring to the parent variable.</P>
-									<h4>THE SOLUTION?</h4>
-									<p>There are multiple ways to fix this issue- one is declaring the variable as <code>let</code> instead of <code>var</code> like so,</p>
-									<figure class="highlight"><pre><code class="language-css"><div>for (var i = 0; i < 3; i++) {</div><div>setTimeout(function() {</div><div> console.log(this.i)</div><div>}.bind({ i: i}), 500)</div><div>}</div>
-									</code></pre></figure>
-									<p>Now the output is 0, 1, 2 which is exactly what we wanted. In the above example, we are binding the global var to function scope using the bind keyword.</p>
-								</div>
-						</li>	
-						
+						<li class="full entry animate-box" data-animate-effect="fadeIn">
+							<span id="how-to-pass-a-variable-by-value-to-async-callbacks-in-javascript"></span>
+						</li>						
 					</ul>	
 				</div>
 			</div>
 		</div>
 	</div>
-
-
-
-
 	</div>
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
@@ -98,6 +78,7 @@
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	<script src="js/ziabs_pages.js"></script>
 	<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

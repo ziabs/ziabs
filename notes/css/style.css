@@ -13,6 +13,20 @@
 .ziabs-blue {
   color:#00adcc !important;
 }
+.ziabs-center-img {
+  margin-left: 15%;
+  margin-top: 15%;
+}
+.ziabs-heading {
+  color:#00adcc !important;
+  text-align: center;
+  margin-top: 3%;
+  background-color: #000000;
+  padding-bottom:6px;
+}
+.ziabs-desc {
+  width: 100% !important;
+}
 body {
   font-family: "Roboto Mono", serif;
   font-weight: 400;
@@ -91,16 +105,16 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0;
   padding: 0;
   width: 100%;
-  padding: 6px 0;
   z-index: 1001;
   background: rgba(0, 0, 0, 0.86);
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+  border-bottom: 2px #00adcc solid;
 }
 .gtco-nav > .container {
-  padding-bottom: 25px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  /* padding-bottom: 25px; */
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.7); */
 }
 @media screen and (max-width: 768px) {
   .gtco-nav {
@@ -245,7 +259,7 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
 }
 .scrolled .gtco-nav {
-  background: #fff;
+  background: #000000;
   padding: 10px 0;
   -webkit-box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.15);
@@ -256,7 +270,7 @@ h1, h2, h3, h4, h5, h6, figure {
   border-bottom: 1px solid transparent;
 }
 .scrolled .gtco-nav a {
-  color: #000;
+  color: #ffffff;
 }
 .scrolled .gtco-nav ul li a:hover, .scrolled .gtco-nav ul li a:focus, .scrolled .gtco-nav ul li a:active {
   color: #F73859 !important;
@@ -692,7 +706,7 @@ figure figcaption {
   padding: 30px;
   display: table-cell;
   width: 50%;
-  margin-bottom: 40px;
+  margin-bottom: -4px;
 }
 @media screen and (max-width: 768px) {
   .entry.full .entry-desc {
@@ -974,7 +988,7 @@ figure figcaption {
 #gtco-team,
 #gtco-contact,
 #gtco-footer {
-  padding: 7em 0;
+  padding: 4em 0;
   clear: both;
 }
 @media screen and (max-width: 768px) {
@@ -2111,5 +2125,3 @@ figure figcaption {
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
 }
-
-/*# sourceMappingURL=style.css.map */
