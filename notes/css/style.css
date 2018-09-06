@@ -699,7 +699,7 @@ figure figcaption {
   background-repeat: no-repeat;
   background-position: 50% 15%;
   width: 50%;
-  height: 500px;
+  height: auto;
 }
 @media screen and (max-width: 768px) {
   .entry.full .entry-img {
