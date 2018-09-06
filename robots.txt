@@ -1,3 +1,3 @@
 User-Agent: *
-Disallow: 
 Allow: /
+Sitemap: http://www.ziabs.com/sitemap.xml
