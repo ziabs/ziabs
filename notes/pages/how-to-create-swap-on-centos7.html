@@ -1,0 +1,37 @@
+<script src="http://ziabs.com/notes/js/ziabs_pages.js"></script>
+<h2 class="ziabs-heading">How to Swap on CentOS 7</h2>
+<div class="entry-desc col-md-12 ziabs-desc">
+	<h2>Check the swap information</h2>
+	<p>We can see if the system has any configured swap by using <code>swapon</code></p>
+	<figure class="highlight"><pre><code class="language-css"><div>swapon -s</div></code></pre></figure>
+	<p>If nothing is returned by the command, then the summary was empty and no swap file exists. Another way of checking for swap space is with the free command</p>
+	<figure class="highlight"><pre><code class="language-css"><div>free -m</div></code></pre></figure>
+	<img src="http://ziabs.com/notes/images/notes/how-to-create-swap-on-centos7.png"  alt="how-to-create-swap-on-centos7">
+	<p>As you can see,Our swap is 0</p>
+	<h4>Create a Swap File</h4>
+	<p>The fastest and easiest way to create a swap file is by using <code>fallocate</code>.</p>
+	<figure class="highlight"><pre><code class="language-css"><div>sudo fallocate -l 2G /swapfile</div></code></pre></figure>
+    <p>If the file system is XFS use <code>dd</code> instead of fallocate.</p>
+	<figure class="highlight"><pre><code class="language-css"><div>sudo dd if=/dev/zero of=/swapfile count=2048 bs=1MiB</div></code></pre></figure>
+	<h4>Enable a Swap File</h4>
+	<figure class="highlight"><pre><code class="language-css"><div>sudo chmod 600 /swapfile</div><div>sudo mkswap /swapfile</div><div>sudo swapon /swapfile</div></code></pre></figure>
+	<p>To verify that the procedure was successful, we can check whether our system reports swap space now:<code>swapon -s</code></p>
+	<h4>Make the Swap File Permanent</h4>
+	<p>Edit the fstab file <code>sudo nano /etc/fstab</code> add the following entry</p>
+	<figure class="highlight"><pre><code class="language-css"><div>/swapfile   swap    swap    sw  0   0</div></code></pre></figure>
+	<p>When you are finished adding the line, you can save and close the file. The server will check this file on each bootup, so the swap file will be ready for use from now on.</p>    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
