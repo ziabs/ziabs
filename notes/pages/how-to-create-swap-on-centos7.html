@@ -1,3 +1,4 @@
+<script src="http://www.ziabs.com/notes/js/redirect.js"></script>
 <h2 class="ziabs-heading">How to Swap on CentOS 7</h2>
 <div class="entry-desc col-md-12 ziabs-desc">
 	<h2>Check the swap information</h2>
@@ -5,7 +6,7 @@
 	<figure class="highlight"><pre><code class="language-css"><div>swapon -s</div></code></pre></figure>
 	<p>If nothing is returned by the command, then the summary was empty and no swap file exists. Another way of checking for swap space is with the free command</p>
 	<figure class="highlight"><pre><code class="language-css"><div>free -m</div></code></pre></figure>
-	<img src="http://ziabs.com/notes/images/notes/how-to-create-swap-on-centos7.png"  alt="how-to-create-swap-on-centos7" class="img-responsive">
+	<img src="http://www.ziabs.com/notes/images/notes/how-to-create-swap-on-centos7.png"  alt="how-to-create-swap-on-centos7" class="img-responsive">
 	<p>As you can see,Our swap is 0</p>
 	<h4>Create a Swap File</h4>
 	<p>The fastest and easiest way to create a swap file is by using <code>fallocate</code>.</p>
