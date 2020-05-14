@@ -200,3 +200,8 @@ p.copyright {
         transform: scale(1);
     }
 }
+.er:hover {
+    color: #ff6000;
+    text-decoration: none;
+    font-size: 69px;
+}
