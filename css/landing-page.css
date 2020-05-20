@@ -1,206 +1,68 @@
-/*!
- * Start Bootstrap - Landing Page Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+body {
+    font-family: 'Play', sans-serif;
+    color: #f6f6f6;
+    background-color: #001c32;
+  }
 
-body,
-html {
+/* Disabling AOS delay on mobile device */
+  @media screen and (max-width: 768px) {
+    [data-aos-delay] {
+      transition-delay: 0 !important;
+    }
+  }
+/* ziAbs main page section */
+#ziabs {
     width: 100%;
-    height: 100%;
-    background-color:#4b5b66;
-}
-
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 700;
-}
-
-.lead {
-    font-size: 18px;
-    font-weight: 400;
-}
-
-.intro-header {
-    text-align: center;
-    color: #f8f8f8;
-    background: url(../img/intro-bg.jpg) no-repeat center center;
-    background-size: cover;
-    min-height:90%;
-}
-
-.intro-message {
+    height: 100vh;
+    background: url("../img/bg.png");
     position: relative;
-    padding-top: 20%;
-}
-
-.intro-message > h1 {
-    margin: 0;
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
-    font-size: 5em;
-}
-
-.intro-divider {
-    width: 666px;
-    border-top: 1px solid #f8f8f8;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.intro-message > h3 {
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
-}
-
-@media (max-width: 767px) {
-    .intro-message {
-        padding-bottom: 20%;
-    }
-
-    .intro-message > h1 {
-        font-size: 3em;
-    }
-
-    .intro-divider {
-        width: 100%;
-    }
-}
-
-p.copyright {
-    margin: 15px 0 0;
-}
-/********** ziAbs css **********/
-.navbar-brand {
-    padding: 9px 9px;
-}
-
-.ziabs-blue {
-    color: #00adcc;
-}
-
-.footer-mail {
-    color: #00adcc;
-    position: relative;
-}
-
-.footer-mail:hover {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.footer-mail:after {
-    display: block;
+    /* background-color: #1aaede; */
+  }
+  
+  #ziabs .ziabs-container {
     position: absolute;
-    left: 0px;
-    width: 0;
-    height: 2px;
-    background-color: #00adcc;
-    content: "";
-    transition: width 0.7s;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 15px;
+  }
+  
+  #ziabs .ziabs-logo {
+    margin-bottom: 30px;
+  }
+  @media (min-width: 1024px) {
+    #ziabs {
+      background-attachment: fixed;
+    }
+  }
+  .welcome,.email a{
+    margin: 0px;
+    color: #f6f6f6;
+  }
+  .email a:hover,.email a:focus{
+    color: #f6f6f6;
+  }
+/* ------------------------------------------------------------------------------------- */
+.footer-bottom {
+    border-top: 1px solid #d90000;
+    z-index: 2;
+    position: relative;
+    padding: 6px;
+    text-align: center;
+  }
+.copyright {
+    text-align: center;
+  }
+.copyright .c{
+    color: #d90000;
 }
-
-.footer-mail:hover:after {
-    width: 100%;
-}
-
-.img-main-center {
-    display: inline;
-    -webkit-animation: pulse 1s ease infinite;
-    -moz-animation: pulse 1s ease infinite;
-    -ms-animation: pulse 1s ease infinite;
-    -o-animation: pulse 1s ease infinite;
-    animation: pulse 1s ease infinite;
-}
-@-webkit-keyframes pulse {
-    0% {
-        -webkit-transform: scale(1);
-    }
-
-    25% {
-        -webkit-transform: scale(1.1);
-    }
-
-    50% {
-        -webkit-transform: scale(1);
-    }
-
-    100% {
-        -webkit-transform: scale(1);
-    }
-}
-
-@-moz-keyframes pulse {
-    0% {
-        -moz-transform: scale(1);
-    }
-
-    25% {
-        -moz-transform: scale(1.1);
-    }
-
-    50% {
-        -moz-transform: scale(1);
-    }
-
-    100% {
-        -moz-transform: scale(1);
-    }
-}
-
-@-ms-keyframes pulse {
-    0% {
-        -ms-transform: scale(1);
-    }
-
-    25% {
-        -ms-transform: scale(1.1);
-    }
-
-    50% {
-        -ms-transform: scale(1);
-    }
-
-    100% {
-        -ms-transform: scale(1);
-    }
-}
-
-@-o-keyframes pulse {
-    0% {
-        -o-transform: scale(1);
-    }
-
-    25% {
-        -o-transform: scale(1.1);
-    }
-
-    50% {
-        -o-transform: scale(1);
-    }
-
-    100% {
-        -o-transform: scale(1);
-    }
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-.er:hover, .er:focus {
-    color: #ff6000 !important;
-    text-decoration: none;
+.copyright .a{
+    color: #1aaede;
 }
