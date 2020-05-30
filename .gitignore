@@ -2,3 +2,5 @@
 .idea
 .history
 ziabs-wallpapers
+.jekyll-cache
+_site
