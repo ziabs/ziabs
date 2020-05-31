@@ -1,1 +1,3 @@
-Sitemap: https://ziabs.com/blog/sitemap.xml
+User-Agent: *
+Allow: /
+Sitemap: https://ziabs.com/sitemap.xml
