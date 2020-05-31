@@ -1,0 +1,3 @@
+User-Agent: *
+Allow: /
+Sitemap: https://ziabs.com/sitemap.xml
