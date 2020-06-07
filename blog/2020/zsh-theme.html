@@ -26,6 +26,9 @@
 <link rel="stylesheet" href="https://ziabs.github.io/hub/assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://ziabs.github.io/hub/assets/css/aos.css" />
 <link href="https://ziabs.github.io/hub/assets/css/landing-page.min.css" rel="stylesheet">
+
+<link href="https://ziabs.github.io/hub/assets/css/vim.min.css" rel="stylesheet">
+
 <!-- ###### SEO ###### -->
 <title>zsh Theme | ziAbs</title>
 <link type="application/atom+xml" rel="alternate" href="https://ziabs.com/blog/feed.xml" title="ziAbs" />
@@ -79,11 +82,13 @@ Once you find a theme that you'd like to use, you will need to edit the ~/.zshrc
 <p>To use a different theme, simply change the value to match the name of your desired theme.<br />For example:<kbd>ZSH_THEME="ziabs"</kbd></p>
 <h3>Installing ziabs zsh theme</h3>
 <p>Copy the theme (ziabs.zsh-theme) file to your zsh theme folder (~/.oh-my-zsh/themes/)</p>
-<div class="ziabs-code overflow-auto">
-<samp>wget --directory-prefix=/home/${USER}/.oh-my-zsh/themes/ https://raw.githubusercontent.com/ziabs/ziabs-zsh-theme/master/ziabs.zsh-theme</samp>
-</div>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">wget <span class="nt">--directory-prefix</span><span class="o">=</span>/home/<span class="k">${</span><span class="nv">USER</span><span class="k">}</span>/.oh-my-zsh/themes/ https://raw.githubusercontent.com/ziabs/ziabs-zsh-theme/master/ziabs.zsh-theme</code></pre></figure>
+
 <p>Update your ZSH_THEME in the <kbd>~/.zshrc</kbd> (ZSH_THEME=ziabs)</p>
-<div class="ziabs-code"><samp>source ~/.zshrc</samp></div>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">source</span> ~/.zshrc</code></pre></figure>
+
 <img src="https://ziabs.github.io/hub/blog/zsh-theme/preview.png" alt="ziabs zsh theme" class="img-fluid" />
 <h5>More information:</h5>
 <p class="badge badge-light">
@@ -98,6 +103,10 @@ https://github.com/ziabs/ziabs-zsh-theme
                 <div class="content pt-4 pt-lg-0 pl-0 pl-lg-3">
                   <h4>Recent Posts</h4>
                   <ul class="list-group list-group-flush">
+                  
+                    <li class="list-group-item">
+                      <a href="https://ziabs.com/blog/2020/tmux.html">tmux Installation And Configuration In Mint Linux</a>
+                      </li>
                   
                     <li class="list-group-item">
                       <a href="https://ziabs.com/blog/2020/zsh-theme.html">zsh Theme</a>

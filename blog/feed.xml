@@ -1,4 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://ziabs.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ziabs.com/blog/" rel="alternate" type="text/html" /><updated>2020-06-07T13:24:52+05:30</updated><id>https://ziabs.com/blog/feed.xml</id><title type="html">ziAbs</title><author><name>Tracy</name></author><entry><title type="html">zsh Theme</title><link href="https://ziabs.com/blog/2020/zsh-theme.html" rel="alternate" type="text/html" title="zsh Theme" /><published>2020-06-06T00:00:00+05:30</published><updated>2020-06-06T00:00:00+05:30</updated><id>https://ziabs.com/blog/2020/zsh-theme</id><content type="html" xml:base="https://ziabs.com/blog/2020/zsh-theme.html">&lt;div class=&quot;ziabs-notes&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://ziabs.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ziabs.com/blog/" rel="alternate" type="text/html" /><updated>2020-06-07T16:44:06+05:30</updated><id>https://ziabs.com/blog/feed.xml</id><title type="html">ziAbs</title><author><name>Tracy</name></author><entry><title type="html">tmux Installation And Configuration In Mint Linux</title><link href="https://ziabs.com/blog/2020/tmux.html" rel="alternate" type="text/html" title="tmux Installation And Configuration In Mint Linux" /><published>2020-06-07T00:00:00+05:30</published><updated>2020-06-07T00:00:00+05:30</updated><id>https://ziabs.com/blog/2020/tmux</id><content type="html" xml:base="https://ziabs.com/blog/2020/tmux.html">&lt;div class=&quot;ziabs-notes&quot;&gt;
+&lt;div class=&quot;media-body&quot;&gt;
+&lt;h3&gt;Welcome to tmux!&lt;/h3&gt;
+&lt;p&gt;`tmux` is a terminal multiplexer for Unix-like operating systems. It allows multiple terminal sessions to be accessed simultaneously in a single window. It is useful for running more than one command-line program at the same time. It can also be used to detach processes from their controlling terminals, allowing SSH sessions to remain active without being visible&lt;/p&gt;
+&lt;p&gt;Please refer the tmux official gitgub repository for more details like installation and more.
+&lt;code&gt;https://github.com/tmux/tmux/wiki&lt;/code&gt;
+&lt;/p&gt;
+&lt;h3&gt;Let's Start&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Installing tmux in Mint linux/Debian systems&lt;/li&gt;
+&lt;li&gt;Updating the tmux configs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Installing tmux in Mint linux/Debian systems&lt;/h4&gt;
+&lt;p&gt;We can install the tmux with following commands:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt update
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;tmux&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Thats all tumx installed on your system !!!, 
+to activate tmux, run the following command in terminal : &lt;kbd&gt;tmux -u&lt;/kbd&gt;
+&lt;/p&gt;
+&lt;h4&gt;Updating the tmux configs&lt;/h4&gt;
+&lt;p&gt;tmux configs are stored in the &lt;kbd&gt; ~/.tmux.conf&lt;/kbd&gt; file (&lt;small&gt;If file not preset crete the file using your favorite text editor&lt;/small&gt;)&lt;/p&gt;
+&lt;p&gt;The first thing you should know is that &lt;code&gt;Ctrl+b&lt;/code&gt; is the default prefix in tmux. It means that running any command requires typing in the prefix first. As you probably have guessed, this is to avoid conflicts with key combinations used in other programs run in the terminal.&lt;/p&gt;
+&lt;h5&gt;Some default commands of tmux&lt;/h5&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b &quot;&lt;/code&gt; :- split pane horizontally&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b %&lt;/code&gt; :- split pane vertically&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b arrow key&lt;/code&gt; :- switch pane&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Hold Ctrl+b arrow key&lt;/code&gt; :- resize pane&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b n &lt;/code&gt; :- move to the next window&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b p &lt;/code&gt; :- move to the previous window&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b c &lt;/code&gt; :- create a new window&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+d or type exit and press Return&lt;/code&gt; :- Quit tmux&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5&gt;Modifying tmux (~/.tmux.conf)&lt;/h5&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;# Setting Default Shell&lt;/span&gt;
+set-option &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; default-shell /usr/bin/zsh
+&lt;span class=&quot;c&quot;&gt;# Adjusting tmux Default Header&lt;/span&gt;
+set-option &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; status-position top
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; status-bg blue
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; status-fg white
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; status-right &lt;span class=&quot;s2&quot;&gt;&quot;ziAbs&quot;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; status-left &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;
+set-window-option &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; window-status-current-bg yellow
+&lt;span class=&quot;c&quot;&gt;# Setting Mouse Mode on To Select pane&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; mouse on
+&lt;span class=&quot;c&quot;&gt;# Changing the default prefix (Ctrl+b) to (Ctrl+a)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; prefix C-a
+&lt;span class=&quot;c&quot;&gt;# Changing the Split Window Short cuts&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;bind &lt;/span&gt;d split-window &lt;span class=&quot;nt&quot;&gt;-h&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;bind &lt;/span&gt;D split-window &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;% &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>Tracy</name></author><category term="programming" /><summary type="html">Welcome to tmux! `tmux` is a terminal multiplexer for Unix-like operating systems. It allows multiple terminal sessions to be accessed simultaneously in a single window. It is useful for running more than one command-line program at the same time. It can also be used to detach processes from their controlling terminals, allowing SSH sessions to remain active without being visible Please refer the tmux official gitgub repository for more details like installation and more. https://github.com/tmux/tmux/wiki Let's Start Installing tmux in Mint linux/Debian systems Updating the tmux configs Installing tmux in Mint linux/Debian systems We can install the tmux with following commands: sudo apt update sudo apt install tmux Thats all tumx installed on your system !!!, to activate tmux, run the following command in terminal : tmux -u Updating the tmux configs tmux configs are stored in the ~/.tmux.conf file (If file not preset crete the file using your favorite text editor) The first thing you should know is that Ctrl+b is the default prefix in tmux. It means that running any command requires typing in the prefix first. As you probably have guessed, this is to avoid conflicts with key combinations used in other programs run in the terminal. Some default commands of tmux Ctrl+b &quot; :- split pane horizontally Ctrl+b % :- split pane vertically Ctrl+b arrow key :- switch pane Hold Ctrl+b arrow key :- resize pane Ctrl+b n :- move to the next window Ctrl+b p :- move to the previous window Ctrl+b c :- create a new window Ctrl+d or type exit and press Return :- Quit tmux Modifying tmux (~/.tmux.conf) # Setting Default Shell set-option -g default-shell /usr/bin/zsh # Adjusting tmux Default Header set-option -g status-position top set -g status-bg blue set -g status-fg white set -g status-right &quot;ziAbs&quot; set -g status-left &quot;&quot; set-window-option -g window-status-current-bg yellow # Setting Mouse Mode on To Select pane set -g mouse on # Changing the default prefix (Ctrl+b) to (Ctrl+a) set -g prefix C-a # Changing the Split Window Short cuts bind d split-window -h bind D split-window -v%</summary></entry><entry><title type="html">zsh Theme</title><link href="https://ziabs.com/blog/2020/zsh-theme.html" rel="alternate" type="text/html" title="zsh Theme" /><published>2020-06-06T00:00:00+05:30</published><updated>2020-06-06T00:00:00+05:30</updated><id>https://ziabs.com/blog/2020/zsh-theme</id><content type="html" xml:base="https://ziabs.com/blog/2020/zsh-theme.html">&lt;div class=&quot;ziabs-notes&quot;&gt;
 &lt;div class=&quot;media-body&quot;&gt;
 &lt;h3&gt;What is Oh My Zsh?&lt;/h3&gt;
 &lt;p&gt;Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration. It comes bundled with thousands of helpful functions, helpers, plugins, themes&lt;/p&gt;
@@ -11,18 +66,20 @@ Once you find a theme that you'd like to use, you will need to edit the ~/.zshrc
 &lt;p&gt;To use a different theme, simply change the value to match the name of your desired theme.&lt;br /&gt;For example:&lt;kbd&gt;ZSH_THEME=&quot;ziabs&quot;&lt;/kbd&gt;&lt;/p&gt;
 &lt;h3&gt;Installing ziabs zsh theme&lt;/h3&gt;
 &lt;p&gt;Copy the theme (ziabs.zsh-theme) file to your zsh theme folder (~/.oh-my-zsh/themes/)&lt;/p&gt;
-&lt;div class=&quot;ziabs-code overflow-auto&quot;&gt;
-&lt;samp&gt;wget --directory-prefix=/home/${USER}/.oh-my-zsh/themes/ https://raw.githubusercontent.com/ziabs/ziabs-zsh-theme/master/ziabs.zsh-theme&lt;/samp&gt;
-&lt;/div&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;wget &lt;span class=&quot;nt&quot;&gt;--directory-prefix&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/home/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;USER&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/.oh-my-zsh/themes/ https://raw.githubusercontent.com/ziabs/ziabs-zsh-theme/master/ziabs.zsh-theme&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 &lt;p&gt;Update your ZSH_THEME in the &lt;kbd&gt;~/.zshrc&lt;/kbd&gt; (ZSH_THEME=ziabs)&lt;/p&gt;
-&lt;div class=&quot;ziabs-code&quot;&gt;&lt;samp&gt;source ~/.zshrc&lt;/samp&gt;&lt;/div&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ~/.zshrc&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 &lt;img src=&quot;https://ziabs.github.io/hub/blog/zsh-theme/preview.png&quot; alt=&quot;ziabs zsh theme&quot; class=&quot;img-fluid&quot; /&gt;
 &lt;h5&gt;More information:&lt;/h5&gt;
 &lt;p class=&quot;badge badge-light&quot;&gt;
 https://github.com/ziabs/ziabs-zsh-theme
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content><author><name>Tracy</name></author><summary type="html">What is Oh My Zsh? Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration. It comes bundled with thousands of helpful functions, helpers, plugins, themes Please refer the zsh official gitgub repository for more details like installation and configurations https://github.com/ohmyzsh/ohmyzsh zsh by default comes with lots of themes. Robby's theme is the default one. It's not the fanciest one. It's not the simplest one. It's just the right one (for him). Once you find a theme that you'd like to use, you will need to edit the ~/.zshrc file. You'll see an environment variable (all caps) in there that looks like:ZSH_THEME=&quot;robbyrussell&quot; To use a different theme, simply change the value to match the name of your desired theme.For example:ZSH_THEME=&quot;ziabs&quot; Installing ziabs zsh theme Copy the theme (ziabs.zsh-theme) file to your zsh theme folder (~/.oh-my-zsh/themes/) wget --directory-prefix=/home/${USER}/.oh-my-zsh/themes/ https://raw.githubusercontent.com/ziabs/ziabs-zsh-theme/master/ziabs.zsh-theme Update your ZSH_THEME in the ~/.zshrc (ZSH_THEME=ziabs) source ~/.zshrc More information: https://github.com/ziabs/ziabs-zsh-theme</summary></entry><entry><title type="html">ASUS TUF A15 Gaming Laptop</title><link href="https://ziabs.com/blog/2020/laptop-asus-tuf-gaming-A15.html" rel="alternate" type="text/html" title="ASUS TUF A15 Gaming Laptop" /><published>2020-06-03T00:00:00+05:30</published><updated>2020-06-03T00:00:00+05:30</updated><id>https://ziabs.com/blog/2020/laptop-asus-tuf-gaming-A15</id><content type="html" xml:base="https://ziabs.com/blog/2020/laptop-asus-tuf-gaming-A15.html">&lt;div class=&quot;ziabs-notes&quot;&gt;
+&lt;/div&gt;</content><author><name>Tracy</name></author><category term="programming" /><summary type="html">What is Oh My Zsh? Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration. It comes bundled with thousands of helpful functions, helpers, plugins, themes Please refer the zsh official gitgub repository for more details like installation and configurations https://github.com/ohmyzsh/ohmyzsh zsh by default comes with lots of themes. Robby's theme is the default one. It's not the fanciest one. It's not the simplest one. It's just the right one (for him). Once you find a theme that you'd like to use, you will need to edit the ~/.zshrc file. You'll see an environment variable (all caps) in there that looks like:ZSH_THEME=&quot;robbyrussell&quot; To use a different theme, simply change the value to match the name of your desired theme.For example:ZSH_THEME=&quot;ziabs&quot; Installing ziabs zsh theme Copy the theme (ziabs.zsh-theme) file to your zsh theme folder (~/.oh-my-zsh/themes/) wget --directory-prefix=/home/${USER}/.oh-my-zsh/themes/ https://raw.githubusercontent.com/ziabs/ziabs-zsh-theme/master/ziabs.zsh-theme Update your ZSH_THEME in the ~/.zshrc (ZSH_THEME=ziabs) source ~/.zshrc More information: https://github.com/ziabs/ziabs-zsh-theme</summary></entry><entry><title type="html">ASUS TUF A15 Gaming Laptop</title><link href="https://ziabs.com/blog/2020/laptop-asus-tuf-gaming-A15.html" rel="alternate" type="text/html" title="ASUS TUF A15 Gaming Laptop" /><published>2020-06-03T00:00:00+05:30</published><updated>2020-06-03T00:00:00+05:30</updated><id>https://ziabs.com/blog/2020/laptop-asus-tuf-gaming-A15</id><content type="html" xml:base="https://ziabs.com/blog/2020/laptop-asus-tuf-gaming-A15.html">&lt;div class=&quot;ziabs-notes&quot;&gt;
   &lt;div class=&quot;media-body&quot;&gt;
   &lt;a target=&quot;_blank&quot; href=&quot;https://www.amazon.in/gp/product/B08825TRF9/ref=as_li_tl?ie=UTF8&amp;amp;camp=3638&amp;amp;creative=24630&amp;amp;creativeASIN=B08825TRF9&amp;amp;linkCode=as2&amp;amp;tag=ziabs-21&amp;amp;linkId=a5fc4243c71f4051c4814ca75b154629&quot;&gt;
   &lt;img src=&quot;https://ziabs.github.io/hub/blog/asus-tuf-a15/top_banner.jpg&quot; alt=&quot;asus-tuf-a15_top_banner.jpg&quot; class=&quot;img-fluid&quot; /&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;
