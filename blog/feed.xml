@@ -1,4 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://ziabs.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ziabs.com/blog/" rel="alternate" type="text/html" /><updated>2020-06-27T16:01:21+05:30</updated><id>https://ziabs.com/blog/feed.xml</id><title type="html">ziAbs</title><author><name>Tracy</name></author><entry><title type="html">Sony WF-XB700 Truly Wireless Extra Bass Bluetooth Earbuds</title><link href="https://ziabs.com/blog/2020/sony-wf-xb700-truly-wireless-extra-bass-bluetooth-earbuds.html" rel="alternate" type="text/html" title="Sony WF-XB700 Truly Wireless Extra Bass Bluetooth Earbuds" /><published>2020-06-27T00:00:00+05:30</published><updated>2020-06-27T00:00:00+05:30</updated><id>https://ziabs.com/blog/2020/sony-wf-xb700-truly-wireless-extra-bass-bluetooth-earbuds</id><content type="html" xml:base="https://ziabs.com/blog/2020/sony-wf-xb700-truly-wireless-extra-bass-bluetooth-earbuds.html">&lt;div class=&quot;ziabs-notes&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://ziabs.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ziabs.com/blog/" rel="alternate" type="text/html" /><updated>2020-06-28T01:32:47+05:30</updated><id>https://ziabs.com/blog/feed.xml</id><title type="html">ziAbs</title><author><name>Tracy</name></author><entry><title type="html">Top 3 Commands To Check Memory In Linux</title><link href="https://ziabs.com/blog/2020/top-3-commands-to-check-memory-in-linux.html" rel="alternate" type="text/html" title="Top 3 Commands To Check Memory In Linux" /><published>2020-06-28T00:00:00+05:30</published><updated>2020-06-28T00:00:00+05:30</updated><id>https://ziabs.com/blog/2020/top-3-commands-to-check-memory-in-linux</id><content type="html" xml:base="https://ziabs.com/blog/2020/top-3-commands-to-check-memory-in-linux.html">&lt;div class=&quot;ziabs-notes&quot;&gt;
+  &lt;div class=&quot;media-body&quot;&gt;
+  &lt;img src=&quot;https://ziabs.github.io/hub/blog/memory/og.jpeg&quot; alt=&quot;Top 3 Commands To Check Memory In Linux&quot; class=&quot;img-fluid&quot; /&gt;
+  &lt;p&gt;&amp;nbsp;&lt;/p&gt;
+  &lt;p&gt;If you are using a system and would like to determine its physical memory without physically checking, you can use the command line.There are number of programs, tools, and utilities which you can use to examine the memory status of your system. This article talks about the frequently used 3 commands.&lt;/p&gt;
+&lt;h2&gt;1. top&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;top&lt;/code&gt; command provides a dynamic, real-time view of a running system. Included in that system summary is the ability to check memory usage on a per-process basis.&lt;br /&gt;
+&lt;kbd&gt;Bonus Tip:&lt;/kbd&gt;&amp;nbsp;&lt;code&gt;top -o %MEM&lt;/code&gt; This memory friendly command will sort all processes by memory used.&lt;/p&gt;
+
+&lt;h2&gt;2. free&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;free&lt;/code&gt; command is the most simple and easy to use and check memory usage on linux. The &lt;code&gt;free&lt;/code&gt; command outputs:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Total Memory,Used Memory,Free Memory.&lt;/li&gt;
+  &lt;li&gt;Total amount of swap memory in the system.&lt;/li&gt;
+  &lt;li&gt;Used caches &amp;amp; buffers memory.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;kbd&gt;Bonus Tip:&lt;/kbd&gt;&amp;nbsp;To show the memory unit to human-readable format &lt;code&gt;free -h&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2&gt;3. /proc/meminfo&lt;/h2&gt;
+&lt;p&gt;The&lt;code&gt;/proc/meminfo&lt;/code&gt; is used by to report the amount of free and used memory (both physical and swap) on the system as well as the shared memory and buffers used by the kernel. You can use the &lt;code&gt;cat&lt;/code&gt; or &lt;code&gt;less&lt;/code&gt; to dispaly the vales.&lt;br /&gt;Example: &lt;code&gt;cat /proc/meminfo&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;Bonus Tips&lt;/h3&gt;
+&lt;p class=&quot;font-weight-bolder&quot;&gt;To list top 10 Memory consuming processes with user.&lt;br /&gt;
+&lt;code&gt;ps -e -o pmem,pid,user,args|sort -k1 -nr|head -10&lt;/code&gt;&lt;/p&gt;
+&lt;p class=&quot;font-weight-bolder&quot;&gt;Find out the top 10 memory consuming process.&lt;br /&gt;
+&lt;code&gt;ps -auxf|sort -nr -k4|head -10&lt;/code&gt;&lt;/p&gt;
+&lt;p class=&quot;font-weight-bolder&quot;&gt;Virtual memory statistics reporter command.&lt;br /&gt;
+&lt;code&gt;vmstat -s&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>Tracy</name></author><summary type="html">&amp;nbsp; If you are using a system and would like to determine its physical memory without physically checking, you can use the command line.There are number of programs, tools, and utilities which you can use to examine the memory status of your system. This article talks about the frequently used 3 commands. 1. top The top command provides a dynamic, real-time view of a running system. Included in that system summary is the ability to check memory usage on a per-process basis. Bonus Tip:&amp;nbsp;top -o %MEM This memory friendly command will sort all processes by memory used.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://ziabs.com/blog/blog/memory/og.jpeg" /><media:content medium="image" url="https://ziabs.com/blog/blog/memory/og.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sony WF-XB700 Truly Wireless Extra Bass Bluetooth Earbuds</title><link href="https://ziabs.com/blog/2020/sony-wf-xb700-truly-wireless-extra-bass-bluetooth-earbuds.html" rel="alternate" type="text/html" title="Sony WF-XB700 Truly Wireless Extra Bass Bluetooth Earbuds" /><published>2020-06-27T00:00:00+05:30</published><updated>2020-06-27T00:00:00+05:30</updated><id>https://ziabs.com/blog/2020/sony-wf-xb700-truly-wireless-extra-bass-bluetooth-earbuds</id><content type="html" xml:base="https://ziabs.com/blog/2020/sony-wf-xb700-truly-wireless-extra-bass-bluetooth-earbuds.html">&lt;div class=&quot;ziabs-notes&quot;&gt;
   &lt;div class=&quot;media-body&quot;&gt;
   &lt;a target=&quot;_blank&quot; href=&quot;https://amzn.to/2B4Mqbn&quot;&gt;
   &lt;img src=&quot;https://m.media-amazon.com/images/S/aplus-media/vc/91450017-f022-48dd-9828-5fa6b506f216.__CR0,0,1464,600_PT0_SX1464_V1___.jpg&quot; alt=&quot;Sony WF-XB700 Truly Wireless Extra Bass Bluetooth Earbuds&quot; class=&quot;img-fluid&quot; /&gt;
