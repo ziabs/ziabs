@@ -1,35 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://ziabs.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ziabs.com/blog/" rel="alternate" type="text/html" /><updated>2020-07-12T15:05:02+05:30</updated><id>https://ziabs.com/blog/feed.xml</id><title type="html">ziAbs</title><author><name>ziabs</name></author><entry><title type="html">How to create Swap Space on Centos</title><link href="https://ziabs.com/blog/2020/how-to-create-swap-space-on-centos.html" rel="alternate" type="text/html" title="How to create Swap Space on Centos" /><published>2020-07-12T00:00:00+05:30</published><updated>2020-07-12T00:00:00+05:30</updated><id>https://ziabs.com/blog/2020/how-to-create-swap-space-on-centos</id><content type="html" xml:base="https://ziabs.com/blog/2020/how-to-create-swap-space-on-centos.html">&lt;div class=&quot;ziabs-notes&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://ziabs.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ziabs.com/blog/" rel="alternate" type="text/html" /><updated>2020-07-12T15:14:55+05:30</updated><id>https://ziabs.com/blog/feed.xml</id><title type="html">ziAbs</title><author><name>ziabs</name></author><entry><title type="html">How to create Swap Space on Centos</title><link href="https://ziabs.com/blog/2020/how-to-create-swap-space-on-centos.html" rel="alternate" type="text/html" title="How to create Swap Space on Centos" /><published>2020-07-12T00:00:00+05:30</published><updated>2020-07-12T00:00:00+05:30</updated><id>https://ziabs.com/blog/2020/how-to-create-swap-space-on-centos</id><content type="html" xml:base="https://ziabs.com/blog/2020/how-to-create-swap-space-on-centos.html">&lt;div class=&quot;ziabs-notes&quot;&gt;
 &lt;div class=&quot;media-body&quot;&gt;
 &lt;img src=&quot;https://ziabs.github.io/hub/blog/how-to-create-swap-space-on-centos/banner.jpeg&quot; alt=&quot;How to create Swap Space on Centos&quot; class=&quot;img-fluid&quot; /&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;h2 id=&quot;what-is-swap-space&quot;&gt;What is SWAP space&lt;/h2&gt;
-&lt;p&gt;Swap space/memory is the virtual space in the system. Which is pre-configured as swap partition/file. Swap space in Linux is used when the system needs more memory resources and the RAM is full, inactive pages in memory are moved to the swap space.&lt;br/&gt;
+&lt;p&gt;Swap space/memory is the virtual space in the system. Which is pre-configured as swap partition/file. Swap space in Linux is used when the system needs more memory resources and the RAM is full, inactive pages in memory are moved to the swap space.&lt;br /&gt;
     &lt;a href=&quot;https://ziabs.com/blog/2020/how-to-clear-swap-space-memory-cache-and-buffer-on-linux.html#clearing-swap-memory&quot; class=&quot;ziabs-link&quot; target=&quot;_blank&quot; title=&quot;https://ziabs.com/blog/2020/how-to-clear-swap-space-memory-cache-and-buffer-on-linux.html&quot;&gt;To clear the swap memory on your system, you simply need to cycle off the swap. This moves all data from swap memory back to RAM.&lt;/a&gt;
 &lt;/p&gt;
 &lt;h2&gt;Check the swap information&lt;/h2&gt;
-&lt;p&gt;We can see if the system has any configured swap by using &lt;code&gt;swapon&lt;/code&gt;&lt;br/&gt;
-&lt;kbd&gt;swapon -s&lt;/kbd&gt;&lt;br/&gt;
+&lt;p&gt;We can see if the system has any configured swap by using &lt;code&gt;swapon&lt;/code&gt;&lt;br /&gt;
+&lt;kbd&gt;swapon -s&lt;/kbd&gt;&lt;br /&gt;
 If nothing is returned by the command, then the summary was empty and no swap file exists. 
 &lt;a class=&quot;ziabs-link&quot; target=&quot;_blank&quot; href=&quot;https://ziabs.com/blog/2020/top-3-commands-to-check-memory-in-linux.html#free&quot; title=&quot;https://ziabs.com/blog/2020/top-3-commands-to-check-memory-in-linux.html&quot;&gt;Another way of checking for swap space is with the free command.&lt;/a&gt;
 If there is know swap , it will show SWAP is 0 
 &lt;/p&gt;
 &lt;h2 id=&quot;create-swap-file&quot;&gt;Create a Swap File&lt;/h2&gt;
 &lt;p&gt;The fastest and easiest way to create a swap file is by using &lt;code&gt;fallocate&lt;/code&gt;.
-    &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;fallocate &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; 2G /swapfile &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;fallocate &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; 2G /swapfile &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
     &lt;i&gt;If the file system is XFS use &lt;code&gt;dd&lt;/code&gt; instead of fallocate.&lt;/i&gt;
-    &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; &lt;span class=&quot;nb&quot;&gt;sudo dd &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/dev/zero &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/swapfile &lt;span class=&quot;nv&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2048 &lt;span class=&quot;nv&quot;&gt;bs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1MiB &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; &lt;span class=&quot;nb&quot;&gt;sudo dd &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/dev/zero &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/swapfile &lt;span class=&quot;nv&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2048 &lt;span class=&quot;nv&quot;&gt;bs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1MiB &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 &lt;/p&gt;
 &lt;h3&gt;Enable a Swap File&lt;/h3&gt;
 &lt;p&gt;
+
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo chmod &lt;/span&gt;600 /swapfile
 &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mkswap /swapfile
 &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;swapon /swapfile&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
 To verify that the procedure was successful, we can check whether our system reports swap space now:&lt;code&gt;swapon -s&lt;/code&gt;
 &lt;/p&gt;
 &lt;h3&gt;Make the Swap File Permanent&lt;/h3&gt;
 &lt;p&gt;
-    Edit the fstab file &lt;code class=&quot;font-weight-bolder&quot;&gt;sudo nano /etc/fstab&lt;/code&gt; add the following entry&lt;br/&gt;
-    &lt;code class=&quot;font-weight-bolder&quot;&gt;/swapfile   swap    swap    sw  0   0&lt;/code&gt;&lt;br/&gt;
+    Edit the fstab file &lt;code class=&quot;font-weight-bolder&quot;&gt;sudo nano /etc/fstab&lt;/code&gt; add the following entry&lt;br /&gt;
+    &lt;code class=&quot;font-weight-bolder&quot;&gt;/swapfile   swap    swap    sw  0   0&lt;/code&gt;&lt;br /&gt;
     When you are finished adding the line, you can save and close the file. The server will check this file on each bootup, so the swap file will be ready for use from now on.
 &lt;/p&gt;
 &lt;/div&gt;
