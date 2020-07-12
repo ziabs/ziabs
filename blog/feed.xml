@@ -1,9 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://ziabs.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ziabs.com/blog/" rel="alternate" type="text/html" /><updated>2020-07-05T19:23:23+05:30</updated><id>https://ziabs.com/blog/feed.xml</id><title type="html">ziAbs</title><author><name>ziabs</name></author><entry><title type="html">How to Clear Swap Space, Memory Cache and Buffer on Linux</title><link href="https://ziabs.com/blog/2020/how-to-clear-swap-space-memory-cache-and-buffer-on-linux.html" rel="alternate" type="text/html" title="How to Clear Swap Space, Memory Cache and Buffer on Linux" /><published>2020-07-05T00:00:00+05:30</published><updated>2020-07-05T00:00:00+05:30</updated><id>https://ziabs.com/blog/2020/how-to-clear-swap-space-memory-cache-and-buffer-on-linux</id><content type="html" xml:base="https://ziabs.com/blog/2020/how-to-clear-swap-space-memory-cache-and-buffer-on-linux.html">&lt;div class=&quot;ziabs-notes&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.1">Jekyll</generator><link href="https://ziabs.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ziabs.com/blog/" rel="alternate" type="text/html" /><updated>2020-07-12T15:05:02+05:30</updated><id>https://ziabs.com/blog/feed.xml</id><title type="html">ziAbs</title><author><name>ziabs</name></author><entry><title type="html">How to create Swap Space on Centos</title><link href="https://ziabs.com/blog/2020/how-to-create-swap-space-on-centos.html" rel="alternate" type="text/html" title="How to create Swap Space on Centos" /><published>2020-07-12T00:00:00+05:30</published><updated>2020-07-12T00:00:00+05:30</updated><id>https://ziabs.com/blog/2020/how-to-create-swap-space-on-centos</id><content type="html" xml:base="https://ziabs.com/blog/2020/how-to-create-swap-space-on-centos.html">&lt;div class=&quot;ziabs-notes&quot;&gt;
+&lt;div class=&quot;media-body&quot;&gt;
+&lt;img src=&quot;https://ziabs.github.io/hub/blog/how-to-create-swap-space-on-centos/banner.jpeg&quot; alt=&quot;How to create Swap Space on Centos&quot; class=&quot;img-fluid&quot; /&gt;
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+&lt;h2 id=&quot;what-is-swap-space&quot;&gt;What is SWAP space&lt;/h2&gt;
+&lt;p&gt;Swap space/memory is the virtual space in the system. Which is pre-configured as swap partition/file. Swap space in Linux is used when the system needs more memory resources and the RAM is full, inactive pages in memory are moved to the swap space.&lt;br/&gt;
+    &lt;a href=&quot;https://ziabs.com/blog/2020/how-to-clear-swap-space-memory-cache-and-buffer-on-linux.html#clearing-swap-memory&quot; class=&quot;ziabs-link&quot; target=&quot;_blank&quot; title=&quot;https://ziabs.com/blog/2020/how-to-clear-swap-space-memory-cache-and-buffer-on-linux.html&quot;&gt;To clear the swap memory on your system, you simply need to cycle off the swap. This moves all data from swap memory back to RAM.&lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;Check the swap information&lt;/h2&gt;
+&lt;p&gt;We can see if the system has any configured swap by using &lt;code&gt;swapon&lt;/code&gt;&lt;br/&gt;
+&lt;kbd&gt;swapon -s&lt;/kbd&gt;&lt;br/&gt;
+If nothing is returned by the command, then the summary was empty and no swap file exists. 
+&lt;a class=&quot;ziabs-link&quot; target=&quot;_blank&quot; href=&quot;https://ziabs.com/blog/2020/top-3-commands-to-check-memory-in-linux.html#free&quot; title=&quot;https://ziabs.com/blog/2020/top-3-commands-to-check-memory-in-linux.html&quot;&gt;Another way of checking for swap space is with the free command.&lt;/a&gt;
+If there is know swap , it will show SWAP is 0 
+&lt;/p&gt;
+&lt;h2 id=&quot;create-swap-file&quot;&gt;Create a Swap File&lt;/h2&gt;
+&lt;p&gt;The fastest and easiest way to create a swap file is by using &lt;code&gt;fallocate&lt;/code&gt;.
+    &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;fallocate &lt;span class=&quot;nt&quot;&gt;-l&lt;/span&gt; 2G /swapfile &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;i&gt;If the file system is XFS use &lt;code&gt;dd&lt;/code&gt; instead of fallocate.&lt;/i&gt;
+    &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; &lt;span class=&quot;nb&quot;&gt;sudo dd &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/dev/zero &lt;span class=&quot;nv&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;/swapfile &lt;span class=&quot;nv&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2048 &lt;span class=&quot;nv&quot;&gt;bs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1MiB &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;h3&gt;Enable a Swap File&lt;/h3&gt;
+&lt;p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;sudo chmod &lt;/span&gt;600 /swapfile
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;mkswap /swapfile
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;swapon /swapfile&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+To verify that the procedure was successful, we can check whether our system reports swap space now:&lt;code&gt;swapon -s&lt;/code&gt;
+&lt;/p&gt;
+&lt;h3&gt;Make the Swap File Permanent&lt;/h3&gt;
+&lt;p&gt;
+    Edit the fstab file &lt;code class=&quot;font-weight-bolder&quot;&gt;sudo nano /etc/fstab&lt;/code&gt; add the following entry&lt;br/&gt;
+    &lt;code class=&quot;font-weight-bolder&quot;&gt;/swapfile   swap    swap    sw  0   0&lt;/code&gt;&lt;br/&gt;
+    When you are finished adding the line, you can save and close the file. The server will check this file on each bootup, so the swap file will be ready for use from now on.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content><author><name>ziabs</name></author><category term="programming" /><summary type="html">&amp;nbsp; What is SWAP space Swap space/memory is the virtual space in the system. Which is pre-configured as swap partition/file. Swap space in Linux is used when the system needs more memory resources and the RAM is full, inactive pages in memory are moved to the swap space. To clear the swap memory on your system, you simply need to cycle off the swap. This moves all data from swap memory back to RAM. Check the swap information We can see if the system has any configured swap by using swapon swapon -s If nothing is returned by the command, then the summary was empty and no swap file exists. Another way of checking for swap space is with the free command. If there is know swap , it will show SWAP is 0 Create a Swap File The fastest and easiest way to create a swap file is by using fallocate. sudo fallocate -l 2G /swapfile If the file system is XFS use dd instead of fallocate. sudo dd if=/dev/zero of=/swapfile count=2048 bs=1MiB Enable a Swap File sudo chmod 600 /swapfile sudo mkswap /swapfile sudo swapon /swapfile To verify that the procedure was successful, we can check whether our system reports swap space now:swapon -s Make the Swap File Permanent Edit the fstab file sudo nano /etc/fstab add the following entry /swapfile swap swap sw 0 0 When you are finished adding the line, you can save and close the file. The server will check this file on each bootup, so the swap file will be ready for use from now on.</summary></entry><entry><title type="html">How to Clear Swap Space, Memory Cache and Buffer on Linux</title><link href="https://ziabs.com/blog/2020/how-to-clear-swap-space-memory-cache-and-buffer-on-linux.html" rel="alternate" type="text/html" title="How to Clear Swap Space, Memory Cache and Buffer on Linux" /><published>2020-07-05T00:00:00+05:30</published><updated>2020-07-05T00:00:00+05:30</updated><id>https://ziabs.com/blog/2020/how-to-clear-swap-space-memory-cache-and-buffer-on-linux</id><content type="html" xml:base="https://ziabs.com/blog/2020/how-to-clear-swap-space-memory-cache-and-buffer-on-linux.html">&lt;div class=&quot;ziabs-notes&quot;&gt;
 &lt;div class=&quot;media-body&quot;&gt;
 &lt;img src=&quot;https://ziabs.github.io/hub/blog/how-to-clear-swap-space-memory-cache-and-buffer-on-linux/banner.jpg&quot; alt=&quot;How to Clear Swap Space, Memory Cache and Buffer on Linux&quot; class=&quot;img-fluid&quot; /&gt;
 &lt;p&gt;&amp;nbsp;&lt;/p&gt;
 &lt;p&gt;The linux Kernels have a mechanism to  drop the page cache and/or inode and dentry caches on command, which can avail free up an abundance of system memory. Now you can discard that script that allocated a ton of memory just to waive of the cache.&lt;/p&gt;
-&lt;h2&gt;Clearing SWAP Memory&lt;/h2&gt;
+&lt;h2 id=&quot;clearing-swap-memory&quot;&gt;Clearing SWAP Memory&lt;/h2&gt;
 &lt;p&gt;To clear the swap memory on your system, you simply need to cycle off the swap. This moves all data from swap memory back to RAM. It additionally betokens that you require to be sure you have the RAM to assist this operation. A facile way to do this is to run &lt;a class=&quot;ziabs-link&quot; target=&quot;_blank&quot; href=&quot;https://ziabs.com/blog/2020/top-3-commands-to-check-memory-in-linux.html#free&quot; title=&quot;https://ziabs.com/blog/2020/top-3-commands-to-check-memory-in-linux.html&quot;&gt;'free -m'&lt;/a&gt; to check what is being utilized in swap and in RAM.&lt;br /&gt;The following command will help you to clear the SWAP memory.&lt;/p&gt;
 &lt;p&gt;
 
@@ -404,65 +439,4 @@ Once you find a theme that you'd like to use, you will need to edit the ~/.zshrc
 https://github.com/ziabs/ziabs-zsh-theme
 &lt;/p&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content><author><name>ziabs</name></author><category term="programming" /><summary type="html">What is Oh My Zsh? Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration. It comes bundled with thousands of helpful functions, helpers, plugins, themes Please refer the zsh official gitgub repository for more details like installation and configurations https://github.com/ohmyzsh/ohmyzsh zsh by default comes with lots of themes. Robby's theme is the default one. It's not the fanciest one. It's not the simplest one. It's just the right one (for him). Once you find a theme that you'd like to use, you will need to edit the ~/.zshrc file. You'll see an environment variable (all caps) in there that looks like:ZSH_THEME=&quot;robbyrussell&quot; To use a different theme, simply change the value to match the name of your desired theme.For example:ZSH_THEME=&quot;ziabs&quot; Installing ziabs zsh theme Copy the theme (ziabs.zsh-theme) file to your zsh theme folder (~/.oh-my-zsh/themes/) wget --directory-prefix=/home/${USER}/.oh-my-zsh/themes/ https://raw.githubusercontent.com/ziabs/ziabs-zsh-theme/master/ziabs.zsh-theme Update your ZSH_THEME in the ~/.zshrc (ZSH_THEME=ziabs) source ~/.zshrc More information: https://github.com/ziabs/ziabs-zsh-theme</summary></entry><entry><title type="html">ASUS TUF A15 Gaming Laptop</title><link href="https://ziabs.com/blog/2020/laptop-asus-tuf-gaming-A15.html" rel="alternate" type="text/html" title="ASUS TUF A15 Gaming Laptop" /><published>2020-06-03T00:00:00+05:30</published><updated>2020-06-03T00:00:00+05:30</updated><id>https://ziabs.com/blog/2020/laptop-asus-tuf-gaming-A15</id><content type="html" xml:base="https://ziabs.com/blog/2020/laptop-asus-tuf-gaming-A15.html">&lt;div class=&quot;ziabs-notes&quot;&gt;
-  &lt;div class=&quot;media-body&quot;&gt;
-  &lt;a target=&quot;_blank&quot; href=&quot;https://www.amazon.in/gp/product/B08825TRF9/ref=as_li_tl?ie=UTF8&amp;amp;camp=3638&amp;amp;creative=24630&amp;amp;creativeASIN=B08825TRF9&amp;amp;linkCode=as2&amp;amp;tag=ziabs-21&amp;amp;linkId=a5fc4243c71f4051c4814ca75b154629&quot;&gt;
-  &lt;img src=&quot;https://ziabs.github.io/hub/blog/asus-tuf-a15/top_banner.jpg&quot; alt=&quot;asus-tuf-a15_top_banner.jpg&quot; class=&quot;img-fluid&quot; /&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;
-  &lt;p&gt;Geared for serious gaming and real-world durability, the TUF Gaming A15 is a fully-loaded Windows 10 Home gaming laptop that can carry you to victory. Powered by up to the latest AMD Ryzen™ 9 CPU and up to GeForce RTX™ 2060 GPU, action-packed gameplay is fast, fluid, and fully saturates speedy IPS-level displays up to 144Hz. Even while boasting a smaller and more portable chassis than its predecessors, this gaming laptop also features a 48Wh lithium-polymer battery for better battery life. Efficient self-cleaning cooling combines with TUF's signature military-grade durability to make this battle-tested road warrior a reliable ally for gamers on the go.&lt;/p&gt;
-  &lt;p class=&quot;text-center&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.amazon.in/gp/product/B08825TRF9/ref=as_li_tl?ie=UTF8&amp;amp;camp=3638&amp;amp;creative=24630&amp;amp;creativeASIN=B08825TRF9&amp;amp;linkCode=as2&amp;amp;tag=ziabs-21&amp;amp;linkId=a5fc4243c71f4051c4814ca75b154629&quot;&gt;
- &lt;button type=&quot;button&quot; class=&quot;btn btn-warning ziabs-btn&quot;&gt;Buy at Amazon&lt;/button&gt;
-&lt;/a&gt;&lt;/p&gt;
-  &lt;table class=&quot;table table-striped table-dark&quot; onclick=&quot;window.open(&amp;quot;https://www.amazon.in/gp/product/B08825TRF9/ref=as_li_tl?ie=UTF8&amp;amp;camp=3638&amp;amp;creative=24630&amp;amp;creativeASIN=B08825TRF9&amp;amp;linkCode=as2&amp;amp;tag=ziabs-21&amp;amp;linkId=a5fc4243c71f4051c4814ca75b154629&amp;quot;);&quot;&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;th scope=&quot;col&quot;&gt;Processor&lt;/th&gt;
-      &lt;td scope=&quot;col&quot;&gt;RYZEN™ 9 4900H&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th scope=&quot;col&quot;&gt;Graphics&lt;/th&gt;
-      &lt;td scope=&quot;col&quot;&gt;RTX™ 2060&lt;br /&gt;&lt;small&gt;NVIDIA® GEFORCE GPU&lt;/small&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;th scope=&quot;col&quot;&gt;Memory &amp;amp; Storage&lt;/th&gt;
-      &lt;td scope=&quot;col&quot;&gt;8GB DDR4 3200MHz RAM, Upgradeable up to 32GB&lt;br /&gt;Storage: 1TB 5400RPM 2.5-inch SATA HDD + 256GB M.2 NVMe PCIe 3.0 SSD&lt;/td&gt;
-    &lt;/tr&gt;    
-    &lt;tr&gt;
-      &lt;th scope=&quot;col&quot;&gt;Display&lt;/th&gt;
-      &lt;td scope=&quot;col&quot;&gt;15.6-inch (16:9) LED-backlit FHD (1920x1080) 144Hz Refresh Rate, Anti-Glare IPS-level Panel with 45% NTSC and Adaptive Sync Technology&lt;/td&gt;
-    &lt;/tr&gt;    
-    &lt;tr&gt;
-      &lt;th scope=&quot;col&quot;&gt;Audio&lt;/th&gt;
-      &lt;td scope=&quot;col&quot;&gt;DTS:X Ultra technology | 1.8x Louder Volume | 2.7x Deeper Bass | Optimized Strategy/RPG/Shooter Audio Modes&lt;/td&gt;
-    &lt;/tr&gt;    
-    &lt;tr&gt;
-      &lt;th scope=&quot;col&quot;&gt;Cooling System&lt;/th&gt;
-      &lt;td scope=&quot;col&quot;&gt;Dual-Fan Design | Self-Cleaning Cooling | Operating Modes for Optimize Cooling&lt;/td&gt;
-    &lt;/tr&gt;    
-    &lt;tr&gt;
-      &lt;th scope=&quot;col&quot;&gt;Ports&lt;/th&gt;
-      &lt;td scope=&quot;col&quot;&gt;1 x 3.5mm COMBO audio jack | 1x Type-A USB2.0 | 2x Type-A USB 3.2 (Gen 1) | 1x Type-C USB 3.2 (Gen 2) with display support DP1.4 | 1x RJ45 LAN jack for LAN insert | 1x HDMI support 2.0b&lt;/td&gt;
-    &lt;/tr&gt;    
-    &lt;tr&gt;
-      &lt;th scope=&quot;col&quot;&gt;Keyboard&lt;/th&gt;
-      &lt;td scope=&quot;col&quot;&gt;RGB backlighting Keyboard&lt;/td&gt;
-    &lt;/tr&gt;    
-    &lt;tr&gt;
-      &lt;th scope=&quot;col&quot;&gt;Operating System&lt;/th&gt;
-      &lt;td scope=&quot;col&quot;&gt;Windows 10 Home (64bit)&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p class=&quot;text-center&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.amazon.in/gp/product/B08825TRF9/ref=as_li_tl?ie=UTF8&amp;amp;camp=3638&amp;amp;creative=24630&amp;amp;creativeASIN=B08825TRF9&amp;amp;linkCode=as2&amp;amp;tag=ziabs-21&amp;amp;linkId=a5fc4243c71f4051c4814ca75b154629&quot;&gt;
- &lt;button type=&quot;button&quot; class=&quot;btn btn-warning ziabs-btn&quot;&gt;Buy at Amazon&lt;/button&gt;
-&lt;/a&gt;&lt;/p&gt;
-&lt;a target=&quot;_blank&quot; href=&quot;https://www.amazon.in/gp/product/B08825TRF9/ref=as_li_tl?ie=UTF8&amp;amp;camp=3638&amp;amp;creative=24630&amp;amp;creativeASIN=B08825TRF9&amp;amp;linkCode=as2&amp;amp;tag=ziabs-21&amp;amp;linkId=a5fc4243c71f4051c4814ca75b154629&quot;&gt;
-&lt;img src=&quot;https://ziabs.github.io/hub/blog/asus-tuf-a15/ports.jpg&quot; alt=&quot;asus-tuf-a15_ports&quot; class=&quot;img-fluid&quot; /&gt;&lt;/a&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;a target=&quot;_blank&quot; href=&quot;https://www.amazon.in/gp/product/B08825TRF9/ref=as_li_tl?ie=UTF8&amp;amp;camp=3638&amp;amp;creative=24630&amp;amp;creativeASIN=B08825TRF9&amp;amp;linkCode=as2&amp;amp;tag=ziabs-21&amp;amp;linkId=a5fc4243c71f4051c4814ca75b154629&quot;&gt;
-&lt;img src=&quot;https://ziabs.github.io/hub/blog/asus-tuf-a15/bottom_banner.jpg&quot; alt=&quot;asus-tuf-a15_bottom_banner&quot; class=&quot;img-fluid&quot; /&gt;&lt;/a&gt;
-&lt;p&gt;&amp;nbsp;&lt;/p&gt;
-&lt;p class=&quot;text-center&quot;&gt;&lt;a target=&quot;_blank&quot; href=&quot;https://www.amazon.in/gp/product/B08825TRF9/ref=as_li_tl?ie=UTF8&amp;amp;camp=3638&amp;amp;creative=24630&amp;amp;creativeASIN=B08825TRF9&amp;amp;linkCode=as2&amp;amp;tag=ziabs-21&amp;amp;linkId=a5fc4243c71f4051c4814ca75b154629&quot;&gt;
- &lt;button type=&quot;button&quot; class=&quot;btn btn-warning ziabs-btn&quot;&gt;Buy at Amazon&lt;/button&gt;
-&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;</content><author><name>ziabs</name></author><summary type="html">Geared for serious gaming and real-world durability, the TUF Gaming A15 is a fully-loaded Windows 10 Home gaming laptop that can carry you to victory. Powered by up to the latest AMD Ryzen™ 9 CPU and up to GeForce RTX™ 2060 GPU, action-packed gameplay is fast, fluid, and fully saturates speedy IPS-level displays up to 144Hz. Even while boasting a smaller and more portable chassis than its predecessors, this gaming laptop also features a 48Wh lithium-polymer battery for better battery life. Efficient self-cleaning cooling combines with TUF's signature military-grade durability to make this battle-tested road warrior a reliable ally for gamers on the go. Buy at Amazon Processor RYZEN™ 9 4900H Graphics RTX™ 2060NVIDIA® GEFORCE GPU Memory &amp;amp; Storage 8GB DDR4 3200MHz RAM, Upgradeable up to 32GBStorage: 1TB 5400RPM 2.5-inch SATA HDD + 256GB M.2 NVMe PCIe 3.0 SSD Display 15.6-inch (16:9) LED-backlit FHD (1920x1080) 144Hz Refresh Rate, Anti-Glare IPS-level Panel with 45% NTSC and Adaptive Sync Technology Audio DTS:X Ultra technology | 1.8x Louder Volume | 2.7x Deeper Bass | Optimized Strategy/RPG/Shooter Audio Modes Cooling System Dual-Fan Design | Self-Cleaning Cooling | Operating Modes for Optimize Cooling Ports 1 x 3.5mm COMBO audio jack | 1x Type-A USB2.0 | 2x Type-A USB 3.2 (Gen 1) | 1x Type-C USB 3.2 (Gen 2) with display support DP1.4 | 1x RJ45 LAN jack for LAN insert | 1x HDMI support 2.0b Keyboard RGB backlighting Keyboard Operating System Windows 10 Home (64bit) Buy at Amazon &amp;nbsp; &amp;nbsp; Buy at Amazon</summary></entry></feed>
+&lt;/div&gt;</content><author><name>ziabs</name></author><category term="programming" /><summary type="html">What is Oh My Zsh? Oh My Zsh is a delightful, open source, community-driven framework for managing your Zsh configuration. It comes bundled with thousands of helpful functions, helpers, plugins, themes Please refer the zsh official gitgub repository for more details like installation and configurations https://github.com/ohmyzsh/ohmyzsh zsh by default comes with lots of themes. Robby's theme is the default one. It's not the fanciest one. It's not the simplest one. It's just the right one (for him). Once you find a theme that you'd like to use, you will need to edit the ~/.zshrc file. You'll see an environment variable (all caps) in there that looks like:ZSH_THEME=&quot;robbyrussell&quot; To use a different theme, simply change the value to match the name of your desired theme.For example:ZSH_THEME=&quot;ziabs&quot; Installing ziabs zsh theme Copy the theme (ziabs.zsh-theme) file to your zsh theme folder (~/.oh-my-zsh/themes/) wget --directory-prefix=/home/${USER}/.oh-my-zsh/themes/ https://raw.githubusercontent.com/ziabs/ziabs-zsh-theme/master/ziabs.zsh-theme Update your ZSH_THEME in the ~/.zshrc (ZSH_THEME=ziabs) source ~/.zshrc More information: https://github.com/ziabs/ziabs-zsh-theme</summary></entry></feed>
